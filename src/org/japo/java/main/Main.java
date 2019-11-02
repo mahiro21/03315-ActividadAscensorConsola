@@ -33,31 +33,22 @@ public class Main {
         //variables & Constantes
         final int MAX = 10;
         final int MIN = 0;
-        
+
         boolean error;
-        int user1;
-        int user2;
-        int user3;
-        int user4;
+        int user;
+        int piso;
 
         //Inicio bucle
+        user = 1;
         do {
             try {
-                System.out.printf("Usuario 1 va al piso ...: ");
-                user1 = SCN.nextInt();
+                System.out.printf("Usuario %d va al piso ...: ", user);
+                piso = SCN.nextInt();
                 
-                System.out.printf("Usuario 2 va al piso ...: ");
-                user2 = SCN.nextInt();
-                
-                System.out.printf("Usuario 3 va al piso ...: ");
-                user3 = SCN.nextInt();
-                
-                System.out.printf("Usuario 4 va al piso ...: ");
-                user4 = SCN.nextInt();
 
-                if (user1 <= MAX  && user1 >= MIN && user2 <= MAX  && user2 >= MIN && user3 <= MAX  && user3 >= MIN && user4 <= MAX  && user4 >= MIN ) {
-                    System.out.printf("Pisos seleccionados por user1 ...:  %d%nPisos seleccionados por user2 ...: %d%nPisos seleccionados por user3 %d%nPisos seleccionados por user4 %d%n", user1, user2, user3, user4);
+                if (piso <= MAX && piso >= MIN) {
                     error = false;
+                    user++;
 
                 } else {
                     error = true;
@@ -69,7 +60,7 @@ public class Main {
                 System.out.println("valor incorrecto");
                 SCN.nextLine();
             }
-        } while ((error == true));
+        } while ((error == true || user <= 4));
         System.out.println("END");
 
     }
