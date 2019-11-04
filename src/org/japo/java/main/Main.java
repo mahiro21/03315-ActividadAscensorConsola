@@ -30,10 +30,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //variables & Constantes
+        //Constantes
         final int MAX = 10;
         final int MIN = 0;
-
+        //variables
         boolean error;
         int user;
         int piso;
@@ -44,20 +44,19 @@ public class Main {
             try {
                 System.out.printf("Usuario %d va al piso ...: ", user);
                 piso = SCN.nextInt();
-                
 
                 if (piso <= MAX && piso >= MIN) {
                     error = false;
                     user++;
-
                 } else {
                     error = true;
                     System.out.println("valor incorrecto");
                 }
-
             } catch (Exception e) {
                 error = true;
                 System.out.println("valor incorrecto");
+            } finally {
+                //Borrar cache
                 SCN.nextLine();
             }
         } while ((error == true || user <= 4));
